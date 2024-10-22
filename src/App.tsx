@@ -39,7 +39,6 @@ const App: React.FC = () => {
       ? tasks.filter((task) => task.completed)
       : tasks;
 
-  // Вычисляем количество активных задач
   const activeTaskCount = tasks.filter((task) => !task.completed).length;
 
   return (

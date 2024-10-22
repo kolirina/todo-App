@@ -1,4 +1,3 @@
-// src/components/TaskList.tsx
 import React from "react";
 import TaskItem from "./TaskItem";
 
@@ -10,7 +9,7 @@ interface Task {
 
 interface TaskListProps {
   tasks: Task[];
-  onToggle: (id: number) => void; // Функция для переключения состояния
+  onToggle: (id: number) => void;
 }
 
 const TaskList: React.FC<TaskListProps> = ({ tasks, onToggle }) => {
