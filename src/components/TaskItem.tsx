@@ -1,11 +1,10 @@
-// src/components/TaskItem.tsx
 import React from "react";
 
 interface TaskItemProps {
   id: number;
   title: string;
   completed: boolean;
-  onToggle: (id: number) => void; // Функция для переключения состояния
+  onToggle: (id: number) => void;
 }
 
 const TaskItem: React.FC<TaskItemProps> = ({
