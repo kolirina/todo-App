@@ -10,7 +10,7 @@ interface Task {
 
 const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [nextId, setNextId] = useState(1); // ID для новых задач
+  const [nextId, setNextId] = useState(1);
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all"); // Фильтр задач
 
   const addTask = (title: string) => {
@@ -39,6 +39,9 @@ const App: React.FC = () => {
       ? tasks.filter((task) => task.completed)
       : tasks;
 
+  // Вычисляем количество активных задач
+  const activeTaskCount = tasks.filter((task) => !task.completed).length;
+
   return (
     <div className="container">
       <div className="title">todos</div>
@@ -47,7 +50,7 @@ const App: React.FC = () => {
         <TaskList tasks={filteredTasks} onToggle={toggleTask} />
 
         <div className="footer">
-          <span className="itemsLeft">{filteredTasks.length} items left</span>
+          <span className="itemsLeft">{activeTaskCount} items left</span>
           <div className="filterButtons">
             <button
               onClick={() => setFilter("all")}

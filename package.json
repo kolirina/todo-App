@@ -42,5 +42,6 @@
   "devDependencies": {
     "@types/jest": "^29.5.13",
     "ts-jest": "^29.2.5"
-  }
+  },
+  "homepage": "https://kolirina.github.io/todo-App"
 }
